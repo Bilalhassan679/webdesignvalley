@@ -10,14 +10,14 @@ const Home = () => {
   const [webViewIsLoaded, setWebViewIsLoaded] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
 
-  
+
   const SplashScreen = () => {
     return (
       <FastImage
         style={styles.SplashScreen_RootView}
         source={require('../../assets/gif/splash.gif')}
         resizeMode={FastImage.resizeMode.contain}
-        
+
       />
     );
   };
@@ -25,21 +25,21 @@ const Home = () => {
 
   return (
     <>
-      <StatusBar  hidden={true} barStyle={'light-content'} />
-   <View style={{flex:isVisible?0:1}}>
-      <SafeAreaView style={{backgroundColor:'#ff1791'}}/>
- <WebView
-    onLoadEnd={(e)=>{
-      setIsVisible(false)
-    }}
-    source={{ uri: 'https://websitedesignvalley.com/' }}
-    mediaPlaybackRequiresUserAction={true} // Set to true to block video auto-play
-          /> 
-          </View>
-          {isVisible  && SplashScreen()}
+      <StatusBar backgroundColor={'#ff1791'} barStyle={'light-content'} />
+      <View style={{ flex: isVisible ? 0 : 1 }}>
+        <SafeAreaView style={{ backgroundColor: '#ff1791' }} />
+        <WebView
+          onLoadEnd={(e) => {
+            setIsVisible(false)
+          }}
+          source={{ uri: 'https://websitedesignvalley.com/' }}
+          mediaPlaybackRequiresUserAction={true} // Set to true to block video auto-play
+        />
+      </View>
+      {isVisible && SplashScreen()}
     </>
 
-    )
+  )
 
 }
 

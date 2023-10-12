@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import {
   LogBox,
+  StatusBar,
   StyleSheet,
 } from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
@@ -34,6 +35,8 @@ function AppTwo() {
   }, []);
   return (
     <>
+         <StatusBar backgroundColor={'#ff1791'} barStyle={'light-content'} />
+
       {isVisible ? 
       SplashScreen()
       
