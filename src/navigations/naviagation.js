@@ -13,6 +13,7 @@ export default function StackNavigatior() {
         screenOptions={{
           animation: 'slide_from_left',
           headerShown: false,
+          orientation: 'portrait',
         }}>
           <Stack.Screen
             name="Home"

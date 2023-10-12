@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import {
   LogBox,
+  Platform,
   StatusBar,
   StyleSheet,
+  View,
 } from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import StackNavigatior from './src/navigations/naviagation';
@@ -12,12 +14,18 @@ function AppTwo() {
   const [isVisible, setIsVisible] = useState(true);
   const SplashScreen = () => {
     return (
+      <View style={{flex:1,backgroundColor:'#171717',
+      justifyContent:'center',
+      alignItems:'center',
+    }}>
+
       <FastImage
         style={styles.SplashScreen_RootView}
-        source={require('./src/assets/gif/splash.gif')}
+        source={require('./src/assets/images/rm-appIcon.png')}
         resizeMode={FastImage.resizeMode.contain}
         
-      />
+        />
+        </View>
     );
   };
 
@@ -31,13 +39,13 @@ function AppTwo() {
     })();
     setTimeout(function () {
       setIsVisible(false);
-    }, 4000);
+    }, 0);
   }, []);
   return (
     <>
          <StatusBar backgroundColor={'#ff1791'} barStyle={'light-content'} />
 
-      {isVisible ? 
+      {isVisible && Platform.OS === 'android' ? 
       SplashScreen()
       
       :
@@ -53,9 +61,7 @@ export default AppTwo;
 
 const styles = StyleSheet.create({
   SplashScreen_RootView: {
-    flex: 1,
-    width: '100%',
-    height: '100%',
-    backgroundColor:'#171717'
-  },
+    aspectRatio:1,
+     height: '25%',
+   },
 });

@@ -13,12 +13,18 @@ const Home = () => {
 
   const SplashScreen = () => {
     return (
+      <View style={{flex:1,backgroundColor:'#171717',
+      justifyContent:'center',
+      alignItems:'center',
+    }}>
+
       <FastImage
         style={styles.SplashScreen_RootView}
-        source={require('../../assets/gif/splash.gif')}
+        source={require('../../assets/images/rm-appIcon.png')}
         resizeMode={FastImage.resizeMode.contain}
-
-      />
+        
+        />
+        </View>
     );
   };
 
@@ -27,7 +33,7 @@ const Home = () => {
     <>
       <StatusBar backgroundColor={'#ff1791'} barStyle={'light-content'} />
       <View style={{ flex: isVisible ? 0 : 1 }}>
-        <SafeAreaView style={{ backgroundColor: '#ff1791' }} />
+        <SafeAreaView style={{ backgroundColor:!isVisible ? '#ff1791' :"#171717"}} />
         <WebView
           onLoadEnd={(e) => {
             setIsVisible(false)

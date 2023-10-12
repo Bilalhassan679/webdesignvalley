@@ -7,9 +7,7 @@ export const styles = StyleSheet.create({
         justifyContent:'center'
     },
     SplashScreen_RootView: {
-        flex: 1,
-        width: '100%',
-        height: '100%',
-        backgroundColor:'#171717'
+       aspectRatio:1,
+        height: '25%',
       },
 })
